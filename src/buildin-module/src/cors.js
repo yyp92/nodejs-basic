@@ -1,3 +1,7 @@
+/**
+ * cors - 资源共享跨域
+ */
+
 const http = require('http')
 const url = require('url')
 

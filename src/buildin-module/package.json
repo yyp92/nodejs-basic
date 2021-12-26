@@ -11,5 +11,9 @@
   "license": "ISC",
   "devDependencies": {
     "log4js": "^6.3.0"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "http-proxy-middleware": "^2.0.1"
   }
 }

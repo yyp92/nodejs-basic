@@ -1,3 +1,7 @@
+/**
+ * jsonp - 跨域
+ */
+
 const http = require('http')
 const url = require('url')
 

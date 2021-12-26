@@ -1,3 +1,7 @@
+/**
+ * querystring 处理url参数
+ */
+
 const logger = require('../utils/log')
 
 const querystring = require('querystring')
