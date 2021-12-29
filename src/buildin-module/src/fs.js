@@ -111,7 +111,46 @@ const fsPromise = require('fs').promises
 
 
 // promise nodejs >= 10
-;(async () => {
-    let result = await fsPromise.readFile('./logs/log1.log')
-    console.log(result.toString())
-})()
+// ;(async () => {
+//     let result = await fsPromise.readFile('./logs/log1.log')
+//     console.log(result.toString())
+// })()
+
+
+// 批量创建文件
+// for (var i = 0; i < 10; i++) {
+//     fs.writeFile(`./logs/log-${i}.log`, `log-${i}`, (err) => {
+//         console.log('done.');
+//     })
+// }
+
+
+// 遍历文件
+// const readDir = (dir = './') => {
+//     fs.readdir(dir, (err, content) => {
+//         // if (Array.isArray(content)) {
+//             content.forEach((value, index) => {
+//                 const newDir = `${dir}/${value}`
+
+//                 fs.stat(newDir, (err, stats) => {
+//                     if (stats.isDirectory()) {
+//                         readDir(newDir)
+//                     }
+//                     else {
+//                         fs.readFile(newDir, 'utf-8', (err, text) => {
+//                             console.log(text);
+//                         })
+//                     }
+//                 })
+//             })
+//         // }
+//     })
+// }
+// readDir('./logs')
+
+
+// watch 方法
+// fs.watch('./logs/log-0.log', (err) => {
+//     console.log('file has changed');
+// })
+
