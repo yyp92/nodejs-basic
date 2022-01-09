@@ -1,3 +1,5 @@
+// 逐行读取
+
 const readline = require('readline')
 
 const rl = readline.createInterface({

@@ -32,6 +32,10 @@ https://juejin.cn/post/6844903991118151688
 - 使用不同版本的node
 
 
+## yarn
+更改源：https://zhuanlan.zhihu.com/p/35856841
+
+
 ## node浏览器端调试
 ```bash
 # 命令
@@ -54,3 +58,8 @@ node --inspect --inspect-brk <脚本文件(js)>
 
 ## nodejs - 包
 - cheerio (在服务器端需要对DOM进行操作)
+
+
+# nodejs 框架
+## express
+官网：https://www.expressjs.com.cn/
