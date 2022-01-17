@@ -63,3 +63,14 @@ node --inspect --inspect-brk <脚本文件(js)>
 # nodejs 框架
 ## express
 官网：https://www.expressjs.com.cn/
+
+## express template
+- ejs
+- pug
+- jade
+- art-template
+
+
+# 页面渲染
+- SSR (Server Side Render -> 服务端渲染)
+- CSR (Client Side Render -> 客户端渲染)
