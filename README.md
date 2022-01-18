@@ -74,3 +74,8 @@ node --inspect --inspect-brk <脚本文件(js)>
 # 页面渲染
 - SSR (Server Side Render -> 服务端渲染)
 - CSR (Client Side Render -> 客户端渲染)
+
+- BSR -- 用 JS、Vue、React 创建 HTML
+- SSG -- 页面静态化
+- SSR -- 服务端渲染
+

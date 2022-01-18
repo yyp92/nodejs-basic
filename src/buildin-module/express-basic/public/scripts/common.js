@@ -1,14 +1,32 @@
+
 $.ajax({
     url: '/api/list',
     success(result) {
-        let html = '<ul>'
+        // let html = '<ul>'
+        // $.each(result.data, (index, value) => {
+        //     html += '<li>' + value + '</li>'
+        // })
+        // html += '</ul>'
+        // $('#list').html(html)
+        // const newData = JSON.parse(result)
 
-        $.each(result.data, (index, value) => {
-            html += '<li>' + value + '</li>'
+        let templateStr = `
+            <ul>
+                {{each data}}
+                    <li>{{$value}}</li>
+                {{/each}}
+            </ul>
+        `
+
+        // let render = template.render('<div>{{data}}</div>', {data: 100})
+        // let render = template.render('./list.art', {data: 100})
+        let html = template.render(templateStr, {
+            data: result.data
         })
 
-        html += '</ul>'
-
         $('#list').html(html)
+    },
+    error(err) {
+        console.log('32', err)
     }
 })
