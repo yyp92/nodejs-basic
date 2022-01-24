@@ -2,7 +2,7 @@ const express = require('express')
 
 // 路由中间件
 const router = express.Router()
-const {list} = require('../controller')
+const {list, token} = require('../controller')
 
 // 获取数据
 // router.get('/', list)
@@ -45,5 +45,7 @@ router.get('/api/list', list)
     
 //     res.send('delete response')
 // })
+
+router.get('/api/token', token)
 
 module.exports = router

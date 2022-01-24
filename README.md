@@ -83,3 +83,20 @@ node --inspect --inspect-brk <脚本文件(js)>
 # MongoDB
 基于分布式文件存储的数据库。
 特点：高性能、易部署、易使用，存储数据非常方便。
+
+
+# JWT -> 用户鉴权
+- jsonwebtoken(生成token算法)
+
+## 秘钥生成
+openssl
+```bash
+# 生成秘钥
+openssl
+genrsa -out rsa_private_key.pem 2048
+
+# 根据私钥生成公钥
+openssl
+rsa -in rsa_private_key.pem -pubout -out rsa_public_key.pem
+```
+
