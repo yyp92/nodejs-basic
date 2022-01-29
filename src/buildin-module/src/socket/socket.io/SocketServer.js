@@ -13,12 +13,14 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  socket.on('receive', (data) => {
-    //   console.log('data', data)
-    socket.broadcast.emit('message', data)
-  })
+    socket.on('receive', (data) => {
+        //   console.log('data', data)
+
+        // 广播
+        socket.broadcast.emit('message', data)
+    })
 });
 
 server.listen(3000, '10.2.96.240', () => {
-  console.log('listening on *:3000');
+    console.log('listening on *:3000');
 });
