@@ -100,3 +100,17 @@ openssl
 rsa -in rsa_private_key.pem -pubout -out rsa_public_key.pem
 ```
 
+
+# Node.js项目
+## 前端 （Frontend）
+- 前端工程化环境（webpack）
+- CSS预处理工具（sass）
+- JS库：jQuery
+- SPA: single怕个applicatio，路由：SME-Router
+- JS模块化：ES Module, C ommonJS Module
+- UI 组件库：Bootstrap(AdminLTE)
+
+## 后端 （Backend）
+- Node,js
+- Express
+- MongoDB(Mongoose)
