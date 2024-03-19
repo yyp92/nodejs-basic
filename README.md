@@ -46,6 +46,7 @@ node --inspect --inspect-brk <脚本文件(js)>
 ## node进程管理工具
 - supervisor
 - nodemon
+    - Nodemon是一个Node.js开发中常用的工具，它可以监视文件系统的更改并自动重新启动应用程序。通过使用Nodemon，开发者可以在修改代码后立即看到效果，而无需手动重新启动服务器。
 - forever
 - pm2
 
