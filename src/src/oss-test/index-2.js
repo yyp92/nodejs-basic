@@ -1,5 +1,5 @@
 /**
- * * oss 分片上传
+ * * oss 授权给第三方上传
  * 
  */
 const OSS = require('ali-oss')
