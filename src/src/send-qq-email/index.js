@@ -4,8 +4,8 @@ const fs = require('fs');
 const path = require('path');
 
 const imap = new Imap({
-    user: '892973319@qq.com',
-    password: 'oghhoyhlsaqbbdjh',
+    user: 'xxxxx@qq.com',
+    password: 'xxxx',
     host: 'imap.qq.com',
     port: 993,
     tls: true
