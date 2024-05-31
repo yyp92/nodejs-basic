@@ -1,0 +1,104 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/client"
+}
+
+generator docs {
+  provider = "node node_modules/prisma-docs-generator"
+  output   = "../generated/docs"
+}
+
+generator json {
+  provider = "prisma-json-schema-generator"
+  output   = "../generated/json"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+}
+
+// @map 是给字段指定另一个名字
+// @@map 是给表指定另一个名字
+// @@index 则是创建一个索引，这里创建了 bbb、ccc 的联合索引。
+model Test {
+  id Int @id @default(autoincrement())
+  aaa String @db.Text
+  bbb Int @db.TinyInt @map("bbb2")
+  ccc String @db.VarChar(50) @unique
+
+  @@map("test_test")
+  @@index([bbb, ccc])
+}
+
+// 创建时间我们使用 @default(now()) 的方式指定，这样插入数据的时候会自动填入当前时间。
+// 更新时间使用 @updatedAt，会自动设置当前时间。
+model Department {
+  id        Int    @id @default(autoincrement())
+  name      String  @db.VarChar(20)
+  createTime DateTime @default(now())
+  updateTime DateTime @updatedAt
+  employees     Employee[]
+}
+
+// 员工和部门是多对一关系，在员工那一侧添加一个 departmentId 的列，然后通过 @relation 声明 deaprtmentId 的列引用 department 的 id 列。
+model Employee {
+  id         Int       @id @default(autoincrement())
+  name      String     @db.VarChar(20)
+  phone     String     @db.VarChar(30)
+
+  deaprtmentId Int
+  department     Department      @relation(fields: [deaprtmentId], references: [id])
+}
+
+
+model Post {
+  id        Int          @id @default(autoincrement())
+  title     String
+  content   String?
+  published Boolean      @default(false)
+  tags      TagOnPosts[]
+}
+
+model Tag {
+  id    Int          @id @default(autoincrement())
+  name  String
+  posts TagOnPosts[]
+}
+
+// 用 @@id 创建一个联合主键
+model TagOnPosts {
+  post   Post @relation(fields: [postId], references: [id])
+  postId Int
+
+  tag    Tag @relation(fields: [tagId], references: [id])
+  tagId  Int
+
+  @@id([postId, tagId])
+}
+
+
+
+model Aaa {
+  id      Int      @id @default(autoincrement())
+  name    String?
+  role    EEE     @default(CCC)
+}
+
+enum EEE {
+  BBB
+  CCC
+  DDD
+}
